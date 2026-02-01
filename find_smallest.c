@@ -6,9 +6,9 @@ t_stack_node    *find_smallest(t_stack_node *a)
     t_stack_node    *smallest;
  
     index = INT_MAX;
-    while (a -> next)
+    while (a)
     {
-        if (a -> value < index)
+        if (a -> index < index)
         {
             smallest = a;
             index = a -> value;

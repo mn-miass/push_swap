@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void    sort_3(t_stack_node *a)
+void    sort_3(t_stack_node **a)
 {
     t_stack_node *big;
     t_stack_node *small;
