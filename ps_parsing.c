@@ -49,5 +49,4 @@ int main(int argc, char **argv)
     ps_parsing(&head_a, argv);
     for (; head_a; head_a = head_a -> next)
         printf("%d  %d\n", head_a -> value, head_a -> index);
-    _CrtDump
 }
