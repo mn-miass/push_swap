@@ -5,6 +5,9 @@
 // what are the non valid inoputs ? non integers some exceed integer limit duplicates
 // i will only check for non int with this function i also added should be only one sign in num_digits
 
+
+//**improtant** input like " 4 5 6 " makes it double free spaces i should check this later
+
 int    num_digits(char *c)
 {
     int num;
@@ -32,20 +35,6 @@ int    num_digits(char *c)
     return (num);
 }
 
-void    *free_split(char **str, int i)
-{
-    int j;
-
-    j = 0;
-    while (j < i)
-    {
-        free(str[j]);
-        j++;
-    }
-    free (str);
-    return(NULL);
-}
-
 int     num_fill(char *str)
 {
     int i;
@@ -66,8 +55,6 @@ char    **ps_split(char *s)
     int     count;
     int     j;
 
-    if (s == NULL)
-        return (NULL); // i guess its not really needed the check of joined string will be outside i can remove it later
     count = num_digits(s);
     if (count == 0)
         return (NULL);
@@ -82,7 +69,10 @@ char    **ps_split(char *s)
             s++;
         splited[j] = malloc(num_fill(s) + 1);
         if (splited[j] == NULL || num_fill(s) == 0)
-            return (free_split(splited, j));
+        {
+            free_2d(splited);
+            return (NULL);
+        }
         while (is_digit(*s) || is_sign(*s))
         {
             splited[j][count] = *s;
@@ -95,10 +85,4 @@ char    **ps_split(char *s)
     }
     splited[j] = NULL;
     return (splited);
-}
-
-int main(int argc, char **argv)
-{
-    char **splited = ps_split(argv[1]);
-    printf("%p\n", splited);
 }

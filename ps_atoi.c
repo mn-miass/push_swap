@@ -18,6 +18,8 @@ long long int ps_atoi(char *c)
     while (is_digit(*c))
     {
         num = num * 10 + (*c - '0');
+        if (num > INT_MAX || num < INT_MIN)
+            return (INT_MAX + 1);
         c++;
     }
     return (num * flag);

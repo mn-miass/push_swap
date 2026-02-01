@@ -13,9 +13,10 @@ char    *ps_strjoin(char *s1, char *s2)
     char *join;
     int i;
 
-
+    // if (s2 == NULL)
+    //     return s1;
     if (s2[0] == '\0')
-        return s1;
+        return NULL;
     join = malloc(ps_strlen(s1) + ps_strlen(s2) + 2);
     if (join == NULL)
         return (NULL);
@@ -42,14 +43,3 @@ char    *ps_strjoin(char *s1, char *s2)
     return (join);
 }
 
-int main(int argc, char **argv)
-{
-    int i = 0;
-    char *join = NULL;
-    while (argv[i])
-    {
-        join = ps_strjoin(join, argv[i]);
-        i++;
-    }
-    printf("%s", join);
-}

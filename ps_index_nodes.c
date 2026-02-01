@@ -13,20 +13,21 @@ void    ps_index_nodes(t_stack_node *head, int len)
     {
         min = INT_MAX;
         head = tmp;
-        while (head -> next)
+        while (head) // changed from head -> next to head i need to check the last node as well else it will be skipped
         {
-            if (min < head->value && (head -> index = 0))
+            if ((min > (head->value)) && (head -> index == 0))
                 min = head->value;
             head = head -> next;
         }
-        min = INT_MAX;
         head = tmp;
-        while (head -> next)
+        while (head)
         {
             if (head -> value == min)
+            {
                 head -> index = i;
+                break;
+            }
             head = head -> next;
-            break;
         }
         i++;
     }

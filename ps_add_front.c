@@ -7,4 +7,3 @@ void ps_add_front(t_stack_node **head, t_stack_node *new)
     new -> next = *head;
     *head = new;
 }
-
