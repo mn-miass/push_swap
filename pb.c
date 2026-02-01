@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void    pb(t_stack_node **a, t_stack_node **b)
+void    pb(t_stack_node **a)
 {
     t_stack_node *tmp;
 
