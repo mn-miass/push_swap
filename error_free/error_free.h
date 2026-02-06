@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:53:42 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/03 10:40:49 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/06 12:34:35 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@
 void    error();
 void    free_2d(char **str);
 void    free_1d(char *str);
+void    free_stack(t_list   **a);
 
 #endif

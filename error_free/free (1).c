@@ -1,25 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_creat_list.c                                    :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/02 17:10:16 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/03 10:50:25 by mn-miass         ###   ########.fr       */
+/*   Created: 2026/02/02 15:59:48 by mn-miass          #+#    #+#             */
+/*   Updated: 2026/02/06 12:34:15 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_list  *ps_new_node(int value)
+void    free_1d(char *str)
 {
-    t_list  *new;
+    free(str);
+}
 
-    new = malloc(sizeof (t_list));
-    if (new == NULL)
-        return (NULL);
-    new -> value = value;
-    new -> next = NULL;
-    return (new);
+void    free_2d(char **str)
+{
+    int i;
+
+    i = 0;
+    while(str[i])
+    {
+        free(str[i]);
+        i++;
+    }
+    free(str);
+}
+void    free_stack(t_list   **a)
+{
+    t_list  *tmp;
+
+    while (*a)
+    {
+        tmp = *a;
+        *a = (*a) -> next;
+        free (tmp);
+    }
 }
