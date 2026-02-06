@@ -10,6 +10,7 @@ typedef struct s_list{
     int             value;
     int             index;
     struct s_list   *next;
+    bool	    is_bigger;
 }t_list;
 
 #endif
