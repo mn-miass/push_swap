@@ -23,5 +23,6 @@ t_list  *ps_new_node(int value)
     new -> next = NULL;
     new -> index = -1;
     new -> is_bigger = 0;
+    new -> is_smaller = 0;
     return (new);
 }
