@@ -7,7 +7,8 @@ SRC    = ./error_free/error.c ./error_free/free.c \
 		 ./operations/pa.c ./operations/pb.c ./operations/ra.c ./operations/rb.c ./operations/rr.c ./operations/rra.c ./operations/rrb.c \
 		 ./operations/rrr.c ./operations/sa.c ./operations/sb.c ./operations/ss.c \
 		 ./parsing/is_functions.c ./parsing/ps_atoi.c ./parsing/ps_parsing.c ./parsing/ps_split.c ./parsing/ps_strdup.c ./parsing/ps_strjoin.c \
-		 ./parsing/ps_strlen.c 
+		 ./parsing/ps_strlen.c \
+		 ./sorting/is_bigger.c ./sorting/is_sorted.c ./sorting/push_b.c ./sorting/sort_2.c ./sorting/sort_3.c ./sorting/sorting.c
 OBJ	   = $(SRC:.c=.o)
 
 all : $(NAME)

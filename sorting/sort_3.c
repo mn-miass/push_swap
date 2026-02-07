@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 14:52:14 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/06 15:13:45 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/06 18:00:59 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void    sort_3(t_list **a)
         ra(a);
         write (1, "ra\n", 3);
     }
-    else if (((*a) -> next) -> is_bigger)
+    if (((*a) -> next) -> is_bigger)
     {
         rra(a);
         write (1, "rra\n", 4);
     }
-    if ((*a) -> value > ((*a) -> next) -> value)
+    if ((*a) -> index > ((*a) -> next) -> index)
     {
         sa(a);
         write (1, "sa\n", 3);

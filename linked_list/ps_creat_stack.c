@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 18:09:13 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/03 12:03:53 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/06 12:24:12 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list  *ps_creat_stack(char **str)
         num = ps_atoi(str[i]);
         if (num > INT_MAX || num < INT_MIN)
         {
-            free_2d(str);
+            free_2d(str); // free the stack
             error();
         }
         ps_add_back(&a, ps_new_node(num));

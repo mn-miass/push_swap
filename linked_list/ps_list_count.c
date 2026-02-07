@@ -6,12 +6,12 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 17:07:39 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/02 18:14:26 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/06 16:50:37 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
+// i guess int is safe
 size_t  ps_list_count(t_list *lst)
 {
     size_t  i;

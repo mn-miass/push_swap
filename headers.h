@@ -9,8 +9,11 @@
 typedef struct s_list{
     int             value;
     int             index;
+    int             cost;
+    int             position;
+    bool            is_bigger;
     struct s_list   *next;
-    bool	    is_bigger;
+    struct s_list   *target;
 }t_list;
 
 #endif

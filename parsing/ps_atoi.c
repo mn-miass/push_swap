@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 14:36:23 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/02 15:56:23 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/06 14:20:48 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ long long int ps_atoi(char *c)
 {
     int             flag;
     long long int   num;
-    int             i;
 
     flag = 1;
     num = 0; 

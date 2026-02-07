@@ -6,19 +6,23 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 15:40:36 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/06 15:42:51 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/06 17:54:52 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void is_sorted(t_list *a)
+void is_sorted(t_list **a)
 {
-    while (a -> next)
+    t_list  *tmp;
+
+    tmp = *a;
+    while (tmp -> next)
     {
-        if (a -> value > (a -> next) -> value)
+        if (tmp -> value > (tmp -> next) -> value)
             return ;
-        a = a -> next;
+        tmp = tmp -> next;
     }
+    free_stack(a);
     exit(0);
 }
