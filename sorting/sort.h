@@ -21,5 +21,6 @@ void    sort_2(t_list **a);
 void    is_sorted(t_list **a);
 void    push_to_b(t_list **a, t_list **b);
 void    sorting(t_list **a, t_list **b);
+int     set_position(t_list *a, int index);
 
 #endif
