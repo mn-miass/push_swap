@@ -1,10 +1,22 @@
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include "linked_list/linked_list.h"
-#include "parsing/parsing.h"
-#include "error_free/error_free.h"
-#include "operations/operations.h"
-#include "sorting/sort.h"
+# include <stdlib.h>
+# include <stdbool.h>
+# include <limits.h>
+# include <unistd.h>
+
+typedef struct s_list{
+    int             value;
+    int             index;
+    int             cost;
+    int             position;
+    int             direction;
+    bool            is_bigger;
+    bool            is_smaller;
+    struct s_list   *next;
+    struct s_list   *target;
+}t_list;
+
 
 #endif

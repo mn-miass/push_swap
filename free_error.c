@@ -1,36 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_creat_stack.c                                   :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/02 18:09:13 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/06 12:24:12 by mn-miass         ###   ########.fr       */
+/*   Created: 2026/02/02 15:59:48 by mn-miass          #+#    #+#             */
+/*   Updated: 2026/02/06 12:34:15 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-#include <stdio.h>
+#include "push_swap.h"
 
-t_list  *ps_creat_stack(char **str)
+void    error()
 {
-    int             i;
-    long long int   num;
-    t_list          *a;
+    write (2, "Error\n", 7);
+    exit(1);
+}
+
+void    free_1d(char *str)
+{
+    free(str);
+}
+
+void    free_2d(char **str)
+{
+    int i;
 
     i = 0;
-    a = NULL;
-    while (str[i])
+    while(str[i])
     {
-        num = ps_atoi(str[i]);
-        if (num > INT_MAX || num < INT_MIN)
-        {
-            free_2d(str); // free the stack
-            error();
-        }
-        ps_add_back(&a, ps_new_node(num));
+        free(str[i]);
         i++;
     }
-    return (a);
+    free(str);
+}
+void    free_stack(t_list   **a)
+{
+    t_list  *tmp;
+
+    while (*a)
+    {
+        tmp = *a;
+        *a = (*a) -> next;
+        free (tmp);
+    }
 }

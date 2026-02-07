@@ -1,0 +1,82 @@
+#include "push_swap.h"
+
+long long int ps_atoi(char *c)
+{
+    int             flag;
+    long long int   num;
+
+    flag = 1;
+    num = 0; 
+    if (ps_is_sign(*c))
+    {
+        if (*c == '-')
+            flag = -1;
+        c++;
+    }
+    while (*c)
+    {
+        num = num * 10 + (*c - '0');
+        if (num > (INT_MAX))
+             return (num);
+        c++;
+    }
+    return (num * flag);
+}
+
+char    *ps_strdup(char *str)
+{
+    char    *dup;
+    size_t  i;
+
+    i = 0;
+    dup = malloc(ps_strlen(str) + 1);
+    if (dup == NULL)
+        return (NULL);
+    while (str[i])
+    {
+        dup[i] = str[i];
+        i++;
+    }
+    dup[i] = '\0';
+    return (dup);
+}
+
+char    *ps_strjoin(char *s1, char *s2)
+{
+    char    *join;
+    size_t  i;
+
+    i = 0;
+    if (s2[0] == '\0' || is_empty(s2))
+        return (NULL);
+    if (s1 == NULL)
+        return (ps_strdup(s2));
+    join = malloc(ps_strlen(s1) + ps_strlen(s2) + 2);
+    if (join == NULL)
+        return (NULL);
+    while (s1[i])
+    {
+        join[i] = s1[i];
+        i++;
+    }
+    join[i++] = ' ';
+    while (*s2)
+    {
+        join[i++] = *s2;
+        s2++;
+    }
+    join[i] = '\0';
+    free (s1);
+    return (join);
+}
+
+size_t  ps_strlen(char *s)
+{
+    size_t  i;
+
+    i = 0;
+    while (s[i])
+        i++;
+    return (i);
+}
+
