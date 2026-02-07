@@ -11,7 +11,9 @@ typedef struct s_list{
     int             index;
     int             cost;
     int             position;
+    int             direction;
     bool            is_bigger;
+    bool            is_smaller;
     struct s_list   *next;
     struct s_list   *target;
 }t_list;
