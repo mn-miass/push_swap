@@ -12,18 +12,15 @@
 
 #include "../push_swap.h"
 
-int     set_position(t_list *a, int index)
+void     set_position(t_list *a)
 {
     int i;
 
     i = 0;
     while (a)
     {
-        if (a -> index == index)
-            return (i);
+        a -> position = i;
         i++;
-        a = a -> index;
+        a = a -> next;
     }
-    return (i);
 }
-
