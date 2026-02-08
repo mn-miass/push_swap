@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/07 17:16:59 by mn-miass          #+#    #+#             */
+/*   Updated: 2026/02/08 09:31:10 by mn-miass         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void    ra(t_list **a)
+
+void    rotate(t_list **a)
 {
     t_list  *tmp;
 
@@ -12,22 +25,23 @@ void    ra(t_list **a)
     (tmp -> next) -> next = NULL;
 }
 
-
 void    ra(t_list **a)
 {
-    t_list  *tmp;
+    rotate(a);
+    write (1, "ra\n", 3);
+}
 
-    tmp = *a;
-    while (tmp -> next)
-        tmp = tmp -> next;
-    tmp -> next = *a;
-    *a = (*a) -> next;
-    (tmp -> next) -> next = NULL;
+
+void    rb(t_list **b)
+{
+    rotate(b);
+    write (1, "rb\n", 3);
 }
 
 
 void    rr(t_list **a, t_list **b)
 {
-    ra(a);
-    rb(b);
+    rotate(a);
+    rotate(b);
+    write(1, "rr\n", 3);
 }

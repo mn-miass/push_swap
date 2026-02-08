@@ -6,11 +6,11 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 10:48:08 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/03 12:21:24 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/07 15:17:25 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 bool    ps_is_digit(char c)
 {

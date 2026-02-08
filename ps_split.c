@@ -6,11 +6,11 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 11:05:17 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/06 12:21:17 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/07 15:20:29 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 // the check for null well be done outside the function
 // the function is working need to hundle memory leaks
 

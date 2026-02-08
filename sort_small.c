@@ -1,41 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_small.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/07 17:16:56 by mn-miass          #+#    #+#             */
+/*   Updated: 2026/02/08 09:17:19 by mn-miass         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void    sort_3(t_list **a)
 {
     if ((*a) -> is_bigger)
-    {
         ra(a);
-        write (1, "ra\n", 3);
-    }
     if (((*a) -> next) -> is_bigger)
-    {
         rra(a);
-        write (1, "rra\n", 4);
-    }
     if ((*a) -> index > ((*a) -> next) -> index)
-    {
         sa(a);
-        write (1, "sa\n", 3);
-    }
 }
 
-void    sort_3(t_list **a)
+void    sort_2(t_list **a)
 {
     if ((*a) -> is_bigger)
-    {
-        ra(a);
-        write (1, "ra\n", 3);
-    }
-    if (((*a) -> next) -> is_bigger)
-    {
-        rra(a);
-        write (1, "rra\n", 4);
-    }
-    if ((*a) -> index > ((*a) -> next) -> index)
-    {
         sa(a);
-        write (1, "sa\n", 3);
-    }
 }
 
 void is_sorted(t_list **a)

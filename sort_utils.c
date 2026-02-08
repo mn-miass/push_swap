@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/07 17:16:53 by mn-miass          #+#    #+#             */
+/*   Updated: 2026/02/07 17:16:54 by mn-miass         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void    is_bigger(t_list *a)
@@ -25,7 +37,7 @@ t_list    *is_smaller(t_list *a)
     t_list              *min_node;
 
     min_node = NULL;
-    min = INT_MAX + 1;
+    min = INT_MAX; //?
     while (a)
     {
         if (a -> value < min)
