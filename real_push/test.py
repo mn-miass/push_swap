@@ -6,9 +6,9 @@ import time
 import os
 
 # ===== CONFIG =====
-SIZE = 100
-TESTS = 1000000
-LIMIT = 700
+SIZE = 500
+TESTS = 10000
+LIMIT = 5500
 TIMEOUT = 5
 WORKERS = mp.cpu_count()
 

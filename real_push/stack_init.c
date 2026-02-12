@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:16:47 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/08 15:59:03 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/10 17:14:59 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_list  *ps_creat_stack(char **str)
     while (str[i])
     {
         num = ps_atoi(str[i]);
-        if (num > INT_MAX)
+        if (num > 2147483648)
         {
             free_2d(str); // free the stack
             error();
