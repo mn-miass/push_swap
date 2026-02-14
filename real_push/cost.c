@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:17:33 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/08 16:04:03 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/14 12:56:31 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,34 +69,18 @@ void    calculate_cost(t_list *a, t_list *b)
     while (b)
     {
         set_direction(b, size_a, size_b);
-        if (b -> direction == b -> target -> direction)
-        {
-            if (b -> direction == UP)
-            {
-                cost_a = b -> target -> position;
-                cost_b = b -> position;
-            }
-            else
-            {
-                cost_a = size_a - b -> target -> position;
-                cost_b = size_b - b -> position;
-            }
-            b -> cost = max(cost_a, cost_b);
-        }
+        if (b -> direction == UP)
+            cost_b = b -> position ;
         else
-        {
-            if (b -> direction == UP)
-            {
-                cost_a = size_a - b -> target -> position;
-                cost_b = b -> position;
-            }
-            else
-            {
-                cost_a = b -> target -> position;
-                cost_b = size_b - b -> position;
-            }
+            cost_b = size_b - b -> position ;
+        if (b -> target -> direction == UP)
+            cost_a = b -> target -> position ;
+        else 
+            cost_a = size_a - b -> target -> position ;
+        if (b -> direction == b -> target -> direction)
+            b -> cost = max(cost_a, cost_b);
+        else
             b -> cost = cost_a + cost_b;
-        }
-        b = b -> next;
+        b = b -> next ;
     }
 }

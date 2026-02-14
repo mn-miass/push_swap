@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:17:23 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/08 20:40:21 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/14 13:59:17 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void    push_to_b(t_list **a, t_list **b)
 
     size = ps_list_count(*a);
     median = size / 2;
-    while (size > 5)
+    while (size > 3)
     {
         if ((*a) -> is_bigger)
             ra(a);

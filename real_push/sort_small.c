@@ -6,11 +6,12 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:16:56 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/08 19:34:32 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/14 10:44:01 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 void    sort_3(t_list **a)
 {
@@ -36,7 +37,9 @@ void is_sorted(t_list **a)
     while (tmp -> next)
     {
         if (tmp -> value > (tmp -> next) -> value)
+        {
             return ;
+        }
         tmp = tmp -> next;
     }
     free_stack(a);
@@ -53,7 +56,7 @@ void    sort_5(t_list **a, t_list **b)
         small = is_smaller(*a);
         while ((*a) != small)
         {
-            if (small -> position < 2)
+            if (small -> position <= 2) 
                 ra(a);
             else
                 rra(a);

@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 17:08:43 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/08 20:41:30 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/14 14:04:06 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,32 +22,28 @@ void    sorting(t_list **a, t_list **b)
     {
         sort_2(a);
         free_stack(a);
-        exit(0);
     }
     else if (size == 3)
     {
         sort_3(a);
         free_stack(a);
-        exit(0);
     }
     else if (size == 5)
     {
         sort_5(a, b);
         free_stack(a);
-        exit(0);
     }
     else
     {
-        push_to_b(a, b);
-        sort_5(a, b);
         sort_complex(a, b);
         free_stack(a);
-        exit(0);
     }
 }
 
 void    sort_complex(t_list **a, t_list **b)
 {
+    push_to_b(a, b);
+    sort_3(a);
     while (*b)
     {
         set_position(*a);

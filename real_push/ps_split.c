@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 11:05:17 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/07 15:20:29 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/12 16:18:43 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char    **ps_split(char *str)
         return (NULL);                   // error free the join
     splited = malloc((size + 1) * sizeof(char *));
     if (splited == NULL)
-        return (NULL);                // error free the join
+        return (NULL);               // error free the join
     size = 0;
     while (*str)
     {
@@ -72,7 +72,7 @@ char    **ps_split(char *str)
         splited[size] = malloc(digit_size(str) + 1);
         if (splited[size] == NULL)
             return (free_2d(splited), NULL);          //error message fre join + splited
-        while (*str && !ps_is_spaces(*str))
+        while (*str && !ps_is_spaces(*str))             // can be optimized
         {
             splited[size][i++] = *str;
             str++;

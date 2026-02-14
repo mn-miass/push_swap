@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:16:30 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/08 16:06:26 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/14 14:04:57 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ int main(int argc, char **argv)
     a = ps_parsing(argc, argv);
     b = NULL;
     sorting(&a, &b);
+    return (0);
 }

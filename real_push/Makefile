@@ -2,7 +2,7 @@ NAME   = push_swap
 CC     = cc
 CFLAGS = -Wall -Wextra -Werror
 SRC    = free_error.c is_functions.c moves.c parsing_utils.c ps_parsing.c ps_split.c push.c reverse_rotate.c \
-		 rotate.c sort_small.c sort_utils.c sorting.c stack_init.c stack_utils.c swap.c cost.c main.c
+		 rotate.c sort_small.c sort_utils.c sorting.c stack_init.c stack_utils.c swap.c cost.c main.c 
 OBJ	   = $(SRC:.c=.o)
 
 all : $(NAME)

@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:17:15 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/08 19:26:21 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/12 17:17:11 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ long long int ps_atoi(char *c)
     while (*c)
     {
         num = num * 10 + (*c - '0');
-        if (num > (INT_MAX))
+        if (num > (INT_MAX + (long long)1)) //long here to convert 1 to long and operate the operation with long long not int
              return (num);
-        c++;
+        c++; 
     }
     return (num * flag);
 }
@@ -59,13 +59,13 @@ char    *ps_strjoin(char *s1, char *s2)
     size_t  i;
 
     i = 0;
-    if (s2[0] == '\0' || is_empty(s2))
-        return (NULL); // need to free befor in case
+    if (s2[0] == '\0' || is_empty(s2)) // is s[0] == '\0' really needed
+        return (free(s1), NULL);
     if (s1 == NULL)
         return (ps_strdup(s2));
     join = malloc(ps_strlen(s1) + ps_strlen(s2) + 2);
     if (join == NULL)
-        return (NULL);
+        return (free(s1), NULL);
     while (s1[i])
     {
         join[i] = s1[i];

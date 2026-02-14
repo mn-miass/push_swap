@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:44:06 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/08 19:28:05 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/12 15:23:26 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ t_list    *ps_parsing(int argc, char **argv)
     {
         join = ps_strjoin(join, argv[i]);
         if (join == NULL)
-            error();
+            error(); 
         i++;
     }
     splitted = ps_split(join);
-    free_1d(join);
+    free_1d(join); //free1d seem worthless
     if (splitted == NULL)
         error();
     i = 0;

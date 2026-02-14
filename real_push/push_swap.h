@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 16:41:00 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/08 18:20:04 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/12 18:20:30 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ typedef struct s_list{
 	int             direction;
 	bool            is_bigger;
 	bool            is_smaller;
-	struct s_list   *next;
-	struct s_list   *target;
+	struct s_list   *next; 	struct s_list   *target;
 }t_list;
 
 t_list			*biggest_smallest(t_list *a, int i);
@@ -81,6 +80,6 @@ bool			ps_is_duplicate(t_list *a);
 void			ps_index_list(t_list *a);
 void    		sort_complex(t_list **a, t_list **b);
 void    		sort_5(t_list **a, t_list **b);
-int     		chunk_value(int size);
-
+int     		chunk_value(int size); //delete this
+void    		print_values(t_list *a);
 #endif
