@@ -1,0 +1,63 @@
+the first one is int main 
+the main function creates 2 stack to work with a and b
+it call a function called parsing
+the function hundle parsing and return the stack a 
+the parsing works in the folowing way 
+    1 - join all argument in one allcated single string 
+        -check for empy string (free the joind return error)
+        -return strdup of s2 if s1 is NULL (fcause the first case is the s1 is NULL to avoid joining garbage values)
+        -realloc the join with the size of both strings join them and free the old join 
+        -if anything happend wrong (fail to allocate) free the allocated string return NULL
+    2- the parsing function check the return from join if anything was wrong the return should be null SO IT APPLY ERROR 
+    3- the joined string go to the split function 
+        - the split function is devided in 3 main functions
+        -num digits that check number of didgit to allocate a pointer to each digit_size but it also check for non degit 2 sign or numsign ... return -1 in this case
+        -digit size that gives the didgit size to allocate its space 
+        -split that get the joined string no need to check or NULL call the num size if anything was wrong return NULL (return -1)
+        -allocate sized pointers + 1 for NULL if it fails return null
+        -loop by joinedstring skip spaces check if we get at the end of string  if its the end return null 
+        -allocate the digit size + 1 check for failing free the 2d array (splited) return null 
+        -fill the splited then go to the next one the last one must be null and return the splited
+    4 - free join no need for it anymore 
+    5 - check for splited if its null mean that split failed in a point or input was wrong ERROR (nothing to be free) {i can skip this step by making the split its self free join and error less lines}
+    6 - call the creat stack function that take the plited part to creat the stack
+        - first we loop by the splited pointer givin each one to special atoi that return long {i can change its name to atol later}
+        - if the number is non valid free the splited free the created stack and ERROR
+        - use the function add back that add node in back of linked list after creating it with new node and giving it the value fron atoi
+        - at the end return the fully fctional list a 
+    7 - check for duplucate with ps_is_duplacate that return 1 if there is any duplucate function 0 for non 
+    8 - check if the lineked list is sorted using is_sorted if its true free the stack and exit
+    9 - giving index to the linked list (we are going to work with its index) and return the linked list to the main 
+
+after all those steps the main takes back the a the b is null and call the function sorting giving it the adress of a and b to modify on pointers what are they pointing to 
+b should be null ause the addback function if b point to a garbage place it will cause segfault 
+the sorting function works in the folowing steps
+    1 - calculate the size of the list 
+    2 - find the biggest value set its biggest flag to true
+    3 - check the size of the list and apply the best one
+        - if the size is 2 only apply the sort2 function that check if the first node have the flag biggest on do sa else is sorted free the stack and exit (max moves 1)
+        - if the size is 3 only apply the sort3 function that make sure the biggest is last by doing 2 main checks if its up ra and make it down if its in the midle rra the check the smallest if its middle sa (max moves 3) 3 2 1 / 1 3 2
+        - if the size is 5 only apply the sort 5 function
+            - call the function that set position (gives the real position to each index from 0 to n)
+            - call the function is_smaller (this one diffrenet a bit then is bigger cause i need to work with the smallest position )
+            - loop until the smallest is in the top by trying to fin i smallest is smaller then the half os stack (5 / 2 = 2) ra and move it up else rra 
+            - if it at top push it to be repeat the process until 3 in stack a the biggest 2 the smallest in stack b 
+            - sort the 3 pa the both and return 
+            - the worst case is  (2 pb + 2 (ra / rra) + 2 ( ra / rra) + 2 (sort3 worst case) + 2 pa = 10) the worst can be 2 3 1 5 4 or 2 5 1 4 3 best case single move {i can optomize it}
+        - else the function goes to the complex case 
+            - first push everything to be except 3 (easy to sort) {i can do 5 later b ut 4 will segfault cause of condition}
+            - the push to be should be in a specific way im working with the median (size / 2) all numbers bigger then median stay just pb else pb rb so the stack of contain all numbers bigger then median up lower then median down 
+            - the push to b was trying to creat a descending order {need to see why the descending not ascending}
+            - sort the 3 left in a by the sort 3 funtion worst cases cant exceed 2 moves why sort3 bcs its easy to do sort 5 segfault in 4 input cause the loop 
+            - i set the position for all numbers in stack a and b each stack goes from 0 to n
+            - use the set target function that always look for the smallest bigger number in stack a the number that she can be up to it give the pointer to it to the node in a 
+            - calculate the cost of each move complicated a bit it calculate the cost of each node to be in its target 
+                - set the size of a and b 
+                - set the direction of each node a function that can be either up or down 1 or -1 1 mean the node is beyond the size_b / 2 need ra to be up -1 mean it is under size_b / 2 need rra 
+                - check the node and it target number of moves if one is up number of moves is the position number if down is the size of stack - position 
+                - th b -> cost is number of moves if both smae  diraction i only need the max one as the cost if both different direction sum the costs 
+            - apply the movement first loop in b and find the cheapest cost loop until a pont to target and b point to the node make rr or rrr if both direction else ra rb rra rrb then push to a
+            - do this while b is not empty 
+            - after this set position and do the final rotation that will check the position of the smallest number loop by ra or rra until its the first element
+    4 free the stack a 
+    5 exit
