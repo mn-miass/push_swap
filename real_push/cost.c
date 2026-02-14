@@ -6,13 +6,13 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:17:33 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/14 12:56:31 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/14 20:55:46 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    set_direction(t_list *a, int size_a, int size_b)
+void set_direction(t_list *a, int size_a, int size_b)
 {
     if (a -> position < size_b / 2)
         a -> direction = UP;
@@ -26,45 +26,45 @@ void    set_direction(t_list *a, int size_a, int size_b)
 
 t_list  *biggest_smallest(t_list *a, int i)
 {
-    t_list  *target;
+	t_list	*target;
 
-    target = NULL;
-    while (a)
-    {
-        if (a -> index > i)
-            if (!target || target -> index > a -> index)
-                target = a;
-        a = a -> next;
-    }
-    return (target);
+	target = NULL;
+	while (a)
+	{
+		if (a -> index > i)
+			if (!target || target -> index > a -> index)
+				target = a;
+		a = a -> next;
+	}
+	return (target);
 }
 
-void    set_target(t_list *a, t_list *b)
+void set_target(t_list *a, t_list *b)
 {
-    is_bigger(b);
-    while (b)
-    {
-        b -> target = biggest_smallest(a, b -> index);
-        b = b -> next;
-    }
+	is_bigger(b);
+	while (b)
+	{
+		b -> target = biggest_smallest(a, b -> index);
+		b = b -> next;
+	}
 }
-int     max(int cost_a, int cost_b)
+int max(int cost_a, int cost_b)
 {
-    if (cost_a > cost_b)
-        return (cost_a);
-    return (cost_b);
+	if (cost_a > cost_b)
+    	return (cost_a);
+	return (cost_b);
 }
 
 // should count rr and rrr as one move
 // should loop with it i should add a new function in calculate cost that set the direction
-void    calculate_cost(t_list *a, t_list *b)
+void calculate_cost(t_list *a, t_list *b)
 {
-    int size_a ;
-    int size_b ;
-    int cost_a ;
-    int cost_b ;
+	int size_a ;
+	int size_b ;
+	int cost_a ;
+	int cost_b ;
 
-    size_a = ps_list_count(a);
+	size_a = ps_list_count(a);
     size_b = ps_list_count(b);
     while (b)
     {
