@@ -1,6 +1,6 @@
 #include "checker_bonus.h"
 
-int     ps_strlen(char *c)
+int     ps_strlen_bonus(char *c)
 {
     int i;
 
@@ -10,7 +10,7 @@ int     ps_strlen(char *c)
     return (i);
 }
 
-bool    is_empty(char *s)
+bool    is_empty_bonus(char *s)
 {
     while (*s)
     {
@@ -20,13 +20,13 @@ bool    is_empty(char *s)
     return 1;
 }
 
-char    *ps_strdup(char *str)
+char    *ps_strdup_bonus(char *str)
 {
     char    *dup;
     int     i;
 
     i = 0;
-    dup = malloc(ps_strlen(str) + 1);
+    dup = malloc(ps_strlen_bonus(str) + 1);
     if (dup == NULL)
         return (NULL);
     while (str[i])
@@ -38,20 +38,17 @@ char    *ps_strdup(char *str)
     return (dup);
 }
 
-char    *ps_strjoin(char *str1, char *str2)
+char    *ps_strjoin_bonus(char *str1, char *str2)
 {
     char    *join;
     int     i;
 
     i = 0;
-    if (is_empty(str1))
-    {
-        free(str1);
-        error();
-    }
+    if (str2[0] == '\0' || is_empty_bonus(str2))
+        return (free(str1), NULL);
     if (str1 == NULL)
-        return (ps_strdup(str2));
-    join = malloc(ps_strlen(str1) + ps_strlen(str2) + 1);
+        return (ps_strdup_bonus(str2));
+    join = malloc(ps_strlen_bonus(str1) + ps_strlen_bonus(str2) + 1);
     if (join == NULL)
         return (NULL);
     while (str1[i])
@@ -59,10 +56,10 @@ char    *ps_strjoin(char *str1, char *str2)
         join[i] = str1[i];
         i++;
     }
+    join[i++] = ' ';
     while (*str2)
     {
-        join[i] = *str2;
-        i++;
+        join[i++] = *str2;
         str2++;
     }
     join[i] = '\0';

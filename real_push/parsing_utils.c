@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:17:15 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/12 17:17:11 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/14 20:30:58 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char    *ps_strjoin(char *s1, char *s2)
     size_t  i;
 
     i = 0;
-    if (s2[0] == '\0' || is_empty(s2)) // is s[0] == '\0' really needed
+    if (s2[0] == '\0' || is_empty(s2))
         return (free(s1), NULL);
     if (s1 == NULL)
         return (ps_strdup(s2));

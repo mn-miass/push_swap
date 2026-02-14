@@ -1,6 +1,6 @@
 #include "checker_bonus.h"
 
-char    *allocate_digit(char *c)
+char    *allocate_digit_bonus(char *c)
 {
     int     i;
     char    *digits;
@@ -21,7 +21,7 @@ char    *allocate_digit(char *c)
 }
 
 
-int     num_digits(char *c)
+int     num_digits_bonus(char *c)
 {
     int     num;
     bool    is_digit;
@@ -47,7 +47,7 @@ int     num_digits(char *c)
 }
 
 
-char    **ps_split(char *c)
+char    **ps_split_bonus(char *c)
 {
     int size;
     int i;
@@ -56,10 +56,10 @@ char    **ps_split(char *c)
     size = num_digits(c);
     i = 0;
     if (size == -1)
-        error();
+        return (NULL);
     splited = malloc((sizeof(char *) + 1) * size);
     if (splited == NULL)
-        error();
+        return (NULL);
     while (*c)
     {
         while (is_space_bonus(*c))
@@ -72,7 +72,7 @@ char    **ps_split(char *c)
             return (splited);
         }
         if (splited[i] == NULL)
-            error();
+            return (free_2d(splited), NULL);
         while (is_digit_bonus(*c) || is_sign_bonus(*c))
             c++;
         i++;

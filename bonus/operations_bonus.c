@@ -1,6 +1,6 @@
 #include "checker_bonus.h"
 
-void    swap(t_list **a)
+void    swap_bonus(t_list **a)
 {
     t_list  *tmp;
 
@@ -9,16 +9,36 @@ void    swap(t_list **a)
     tmp = (*a) -> next -> next;
     (*a) -> next = tmp;
 }
-
-void    rotate(t_list **a)
+void    rotate_bonus(t_list **a)
 {
-    t_list *tmp;
+    t_list  *tmp;
 
     tmp = *a;
     while (tmp -> next)
         tmp = tmp -> next;
     tmp -> next = *a;
-    *a = tmp;
+    *a = (*a) -> next;
     tmp -> next -> next = NULL;
 }
 
+void    reverse_rotate_bonus(t_list **a)
+{
+    t_list *tmp;
+
+    tmp = *a;
+    while (tmp -> next -> next)
+        tmp = tmp -> next;
+    tmp -> next -> next = *a;
+    *a = tmp -> next ;
+    tmp -> next = NULL;
+}
+
+void    push_bonus(t_list **a, t_list **b)
+{
+    t_list  *tmp;
+
+    tmp = *a;
+    *a = (*a) -> next ;
+    tmp -> next = *b;
+    (*b) = tmp;
+}

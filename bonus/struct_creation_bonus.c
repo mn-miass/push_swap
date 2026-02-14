@@ -27,6 +27,25 @@ t_list  *creat_node(int val)
     return (new);
 }
 
+bool    is_duplicated_bonus(t_list *a)
+{
+    t_list  *tmp;
+
+    tmp = a -> next;
+    while (a)
+    {
+        while (tmp)
+        {
+            if (tmp -> value == a -> value)
+                return (1);
+            tmp = tmp -> next ;
+        }
+        a = a -> next;
+        tmp = a -> next ;
+    }
+    return 0;
+}
+
 t_list      *creat_stract(char  **splited)
 {
     t_list  *a;
@@ -55,39 +74,3 @@ bool    is_sorted(t_list *a)
     return 1;
 }
 
-void    apply_operations(t_list *a, t_list *b, char *str)
-{
-    if (ps_cmp(str, "pa"))
-        push(a);
-    else if (ps_cmp(str, "pb"))
-        push(b);
-    else if (ps_cmp(str, "sa"))
-        swap(a);
-    else if (ps_cmp(str, "sb"))
-        swap(b);
-    else if (ps_cmp(str, "ss"))
-    {
-        swap(a);
-        swap(b);
-    }
-    else if (ps_cmp(str, "ra"))
-        rotate(a);
-    else if (ps_cmp(str, "rb"))
-        rotate(b);
-    else if (ps_cmp(str, "rr"))
-    {
-        rotate(a);
-        rotate(b);
-    }
-    else if (ps_cmp(str, "rra"))
-        reverse_rotate(a);
-    else if (ps_cmp(str, "rrb"))
-        reverse_rotate(b);
-    else if (ps_cmp(str, "rrr"))
-    {
-        reverse_rotate(a);
-        reverse_rotate(b);
-    }
-    else
-        error();
-}
