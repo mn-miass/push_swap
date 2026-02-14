@@ -6,43 +6,43 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:59:48 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/14 21:13:58 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/14 22:08:43 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    error()
+void	error(void)
 {
-    write (2, "Error\n", 6);
-    exit(1);
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
-void    free_1d(char *str)
+void	free_1d(char *str)
 {
-    free(str);
+	free(str);
 }
 
-void    free_2d(char **str)
+void	free_2d(char **str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(str[i])
-    {
-        free(str[i]);
-        i++;
-    }
-    free(str);
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
 }
-void    free_stack(t_list   **a) //does it free evrything ?
+void	free_stack(t_list **a) // does it free evrything ?
 {
-    t_list  *tmp;
+	t_list *tmp;
 
-    while (*a)
-    {
-        tmp = *a;
-        *a = (*a) -> next;
-        free (tmp);
-    }
+	while (*a)
+	{
+		tmp = *a;
+		*a = (*a)->next;
+		free(tmp);
+	}
 }
