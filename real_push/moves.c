@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:17:23 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/14 22:09:42 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/15 08:41:25 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,28 @@ void	push_to_b(t_list **a, t_list **b)
 		size--;
 	}
 }
-// need to be improved
+
+void	to_rotate(t_list **a, t_list *node, char stack)
+{
+	while ((*a) != node)
+	{
+		if (node -> direction == UP)
+		{
+			if (stack == 'a')
+				ra(a);
+			else
+				rb(a);
+		}
+		if (node -> direction == DOWN)
+		{
+			if (stack == 'a')
+				rra(a);
+			else
+				rrb(a);
+		}
+	}
+}
+
 void	execute_rotation(t_list **a, t_list **b)
 {
 	t_list	*to_rotate_a;
@@ -45,20 +66,8 @@ void	execute_rotation(t_list **a, t_list **b)
 		else
 			rrr(a, b);
 	}
-	while ((*a) != to_rotate_a)
-	{
-		if (to_rotate_a->direction == 1)
-			ra(a);
-		else
-			rra(a);
-	}
-	while ((*b) != to_rotate_b)
-	{
-		if (to_rotate_b->direction == 1)
-			rb(b);
-		else
-			rrb(b);
-	}
+	to_rotate(a, to_rotate_a, 'a');
+	to_rotate(b, to_rotate_b, 'b');
 	pa(a, b);
 }
 

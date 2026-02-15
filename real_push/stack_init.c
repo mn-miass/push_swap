@@ -6,14 +6,11 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:16:47 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/14 22:10:42 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/14 22:20:01 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// functions needed
-// ps_atoi free2d error ps_new_node
 
 t_list	*ps_new_node(int value)
 {
@@ -41,9 +38,9 @@ t_list	*ps_creat_stack(char **str)
 	while (str[i])
 	{
 		num = ps_atoi(str[i]);
-		if (num >= 2147483648) // still need to check the biggest num DONE
+		if (num >= 2147483648)
 		{
-			free_2d(str); // free the stack
+			free_2d(str);
 			free_stack(&a);
 			error();
 		}

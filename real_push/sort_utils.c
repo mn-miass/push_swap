@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:16:53 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/14 22:10:33 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/15 11:04:42 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_list	*is_smaller(t_list *a)
 	t_list			*min_node;
 
 	min_node = NULL;
-	min = INT_MAX; //?
+	min = INT_MAX;
 	while (a)
 	{
 		if (a->value < min)
@@ -69,7 +69,7 @@ void	set_position(t_list *a)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	while (a)
 	{
 		a->position = i;

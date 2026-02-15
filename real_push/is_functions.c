@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 10:48:08 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/14 22:09:30 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/15 08:30:01 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ bool	ps_is_novalid(char c)
 {
 	return (!ps_is_sign(c) && !ps_is_digit(c) && !ps_is_spaces(c));
 }
+
 bool	is_empty(char *str)
 {
 	while (*str)

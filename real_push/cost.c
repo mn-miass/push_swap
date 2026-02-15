@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:17:33 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/14 22:12:11 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/15 11:14:12 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	set_target(t_list *a, t_list *b)
 		b = b->next;
 	}
 }
+
 int	max(int cost_a, int cost_b)
 {
 	if (cost_a > cost_b)
@@ -55,8 +56,6 @@ int	max(int cost_a, int cost_b)
 	return (cost_b);
 }
 
-// should count rr and rrr as one move
-// should loop with it i should add a new function in calculate cost that set the direction
 void	calculate_cost(t_list *a, t_list *b)
 {
 	int	size_a;
