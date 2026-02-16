@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 21:37:57 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/16 15:49:59 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/16 17:26:44 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	reverse_rotate_op_bonus(char *str, t_list **a, t_list **b)
 
 void	push_op_bonus(char *str, t_list **a, t_list **b) // segfault ? 
 {
-	print_two_list(*a, *b);
 	if (cmp_bonus(str, "pa"))
 		push_bonus(b, a);
 	else if (cmp_bonus(str, "pb"))
@@ -68,16 +67,16 @@ void	push_op_bonus(char *str, t_list **a, t_list **b) // segfault ?
 		free_structs_bonus(*a, *b);
 }
 
-void	apply_operations_bonus(t_list *a, t_list *b, char *str)
+void	apply_operations_bonus(t_list **a, t_list **b, char *str)
 {
 	if (str[0] == 'p')
-		push_op_bonus(str, &a, &b);
+		push_op_bonus(str, a, b);
 	else if (str[0] == 's')
-		swap_op_bonus(str, &a, &b);
+		swap_op_bonus(str, a, b);
 	else if (str[0] == 'r' && str[1] == 'r')
-		reverse_rotate_op_bonus(str, &a, &b);
+		reverse_rotate_op_bonus(str, a, b);
 	else if (str[0] == 'r')
-		rotate_op_bonus(str, &a, &b);
+		rotate_op_bonus(str, a, b);
 	// else
 	// 	free_structs_bonus(a, b); i can free later 
 }

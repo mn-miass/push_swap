@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 21:55:06 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/16 15:45:55 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/16 16:07:10 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char				*ps_get_next_line_bonus(void);
 long long int		ps_atoi_bonus(char *c);
 void				free_2d_bonus(char **str);
 void				free_struct_bonus(t_list *a);
-void				apply_operations_bonus(t_list *a, t_list *b, char *str);
+void				apply_operations_bonus(t_list **a, t_list **b, char *str);
 void				checker_bonus(t_list **a, t_list **b);
 void				error_bonus(void);
 void				free_2d_bonus(char **str);
