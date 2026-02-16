@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:45:07 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/14 22:09:04 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/16 10:38:55 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ps_realloc_bonus(char *str, char c)
 	i = 0;
 	new = malloc(ps_strlen_bonus(str) + 2);
 	if (new == NULL)
-		return (NULL); // need to free
+		return (NULL);
 	while (str[i])
 	{
 		new[i] = str[i];
@@ -33,7 +33,7 @@ char	*ps_realloc_bonus(char *str, char c)
 	return (new);
 }
 
-char	*ps_get_next_line_bonus(int fd)
+char	*ps_get_next_line_bonus(void)
 {
 	char	*word;
 	char	c;
@@ -41,13 +41,14 @@ char	*ps_get_next_line_bonus(int fd)
 
 	word = malloc(1);
 	word[0] = '\0';
-	while (i = (read(fd, &c, 1)))
+	while (1)
 	{
+		i = read(0, &c, 1);
+		if (i == 0)
+			return (NULL);
 		if (c != '\n')
 			word = ps_realloc_bonus(word, c);
 		if (c == '\n')
 			return (word);
 	}
-	if (i == 0)
-		return (NULL);
 }

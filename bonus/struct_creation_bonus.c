@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   struct_creation_bonus.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/14 22:24:27 by mn-miass          #+#    #+#             */
+/*   Updated: 2026/02/15 19:37:07 by mn-miass         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker_bonus.h"
 
 void	add_back_bonus(t_list **a, t_list *new)
@@ -48,21 +60,25 @@ bool	is_duplicated_bonus(t_list *a)
 
 t_list	*creat_stract_bonus(char **splited)
 {
-	t_list	*a;
-	int		i;
-	int		value;
+	t_list		*a;
+	int			i;
+	long long	value;
 
 	i = 0;
 	while (splited[i])
 	{
 		value = ps_atoi_bonus(splited[i]);
-		if (value > INT_MAX)
-			return (NULL);
+		if (value > INT_MAX || value < INT_MIN)
+		{
+			free_struct_bonus(a);
+			error_bonus();
+		}
 		add_back_bonus(&a, creat_node_bonus(value));
 		i++;
 	}
 	return (a);
 }
+
 bool	is_sorted_bonus(t_list *a)
 {
 	while (a->next)

@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 21:59:41 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/14 22:01:32 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/16 15:43:18 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,14 @@ void	free_struct_bonus(t_list *a)
 	while (a)
 	{
 		a = a ->next;
-		free (tmp);
+		free(tmp);
 		tmp = a;
 	}
+}
+
+void	free_structs_bonus(t_list *a, t_list *b)
+{
+	free_struct_bonus(a);
+	free_struct_bonus(b);
+	error_bonus();
 }

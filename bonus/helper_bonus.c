@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 22:01:40 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/14 22:03:55 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/15 14:03:26 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 bool	is_digit_bonus(char c)
 {
-	return ((unsigned)(c - '0') < 10);
+	return (c >= '0' && c <= '9');
 }
 
 bool	is_space_bonus(char c)

@@ -1,11 +1,23 @@
-#include "checker_bonus.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing_bonus.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/15 12:24:21 by mn-miass          #+#    #+#             */
+/*   Updated: 2026/02/16 14:50:16 by mn-miass         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-t_list  *parsing(int argc, char **argv)
+#include "checker_bonus.h"
+#include <stdio.h>
+t_list	*parsing_bonus(int argc, char **argv)
 {
-	char    *join;
-	char    **splited;
-	t_list  *a;
-	int     i;
+	char	*join;
+	char	**splited;
+	t_list	*a;
+	int		i;
 
 	i = 1;
 	join = NULL;
@@ -22,8 +34,8 @@ t_list  *parsing(int argc, char **argv)
 	splited = ps_split_bonus(join);
 	free(join);
 	if (splited == NULL)
-		return (free_2d_bonus(splited), NULL);
-	a = creat_stract_bonus(a, splited);
-	free_2d_bonus(splited);
+		error_bonus();
+	a = creat_stract_bonus(splited);
+	free_2d_bonus(splited); 
 	return (a);
 }

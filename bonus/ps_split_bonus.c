@@ -1,5 +1,17 @@
-#include "checker_bonus.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ps_split_bonus.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/14 22:24:44 by mn-miass          #+#    #+#             */
+/*   Updated: 2026/02/16 13:10:15 by mn-miass         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "checker_bonus.h"
+#include <stdio.h>
 char	*allocate_digit_bonus(char *c)
 {
 	int		i;
@@ -29,12 +41,14 @@ int	num_digits_bonus(char *c)
 	num = 0;
 	while (*c)
 	{
-		if ((is_digit_bonus(*c) || is_sign_bonus(*c)) && is_digit == 0)
+		if (is_sign_bonus(*c) && !is_digit_bonus(c[1]))
+			return (-1);
+		else if ((is_digit_bonus(*c) || is_sign_bonus(*c)) && is_digit == 0)
 		{
 			num++;
 			is_digit = 1;
 		}
-		else if (is_digit && is_sign_bonus(*c))
+		else if ((is_digit && is_sign_bonus(*c)))
 			return (-1);
 		else if (is_space_bonus(*c))
 			is_digit = 0;
@@ -54,7 +68,7 @@ char	**ps_split_bonus(char *c)
 	size = num_digits_bonus(c);
 	i = 0;
 	if (size == -1)
-		return (NULL);
+		return(NULL);
 	splited = malloc((sizeof(char *) + 1) * size);
 	if (splited == NULL)
 		return (NULL);
@@ -77,3 +91,15 @@ char	**ps_split_bonus(char *c)
 	}
 	return (splited);
 }
+
+// int main(int argc, char **argv)
+// {
+// 	int i = 0;
+// 	// char **splited = ps_split_bonus(argv[1]);
+// 	// while (splited[i])
+// 	// {
+// 	// 	printf("%s ", splited[i]);
+// 	// 	i++;
+// 	// }
+// 	printf("%d", num_digits_bonus(argv[1]));
+// }
