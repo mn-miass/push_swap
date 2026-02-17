@@ -6,11 +6,12 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 21:47:02 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/16 17:19:37 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/17 18:09:54 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
+#include <stdio.h>
 
 // infinite loop in testing
 // segfaultt when we talk about non didgit even sign ?
@@ -20,6 +21,17 @@
 // delete ps
 // free the get next line
 // free the structs
+// missing the duplicates checker
+void	ps(char *str)
+{
+	while (*str)
+	{
+		write(1, str, 1);
+		str++;
+	}
+	write(1, "\n", 1);
+}
+
 void	checker_bonus(t_list **a, t_list **b)
 {
 	char	*str;
@@ -29,6 +41,7 @@ void	checker_bonus(t_list **a, t_list **b)
 	{
 		apply_operations_bonus(a, b, str);
 		str = ps_get_next_line_bonus();
+		free(str);
 	}
 	if (is_sorted_bonus(*a) && struct_size(*b) == 0)
 		write(1, "OK\n", 3);

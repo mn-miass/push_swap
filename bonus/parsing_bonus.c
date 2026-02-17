@@ -6,12 +6,21 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 12:24:21 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/16 14:50:16 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/17 18:10:06 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 #include <stdio.h>
+
+void	check(t_list *a)
+{
+	if (is_dupliated_bonus(a))
+	{
+		free_struct_bonus(a);
+		error_bonus();
+	}
+}
 t_list	*parsing_bonus(int argc, char **argv)
 {
 	char	*join;
@@ -36,6 +45,7 @@ t_list	*parsing_bonus(int argc, char **argv)
 	if (splited == NULL)
 		error_bonus();
 	a = creat_stract_bonus(splited);
-	free_2d_bonus(splited); 
+	free_2d_bonus(splited);
+	check(a);
 	return (a);
 }

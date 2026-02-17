@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 21:55:06 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/16 16:07:10 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/17 17:26:25 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ void				error_bonus(void);
 void				free_2d_bonus(char **str);
 void				free_struct_bonus(t_list *a);
 bool				cmp_bonus(char *str1, char *str2);
-void				swap_bonus(t_list **a, t_list **b);
-void				rotate_bonus(t_list **a, t_list **b);
-void				reverse_rotate_bonus(t_list **a, t_list **b);
+void				swap_bonus(t_list **a);
+void				rotate_bonus(t_list **a);
+void				reverse_rotate_bonus(t_list **a);
 void				push_bonus(t_list **a, t_list **b);
 t_list				*parsing_bonus(int argc, char **argv);
 long long int		ps_atoi_bonus(char *c);
@@ -56,5 +56,6 @@ bool				is_duplicated_bonus(t_list *a);
 t_list				*creat_node_bonus(int val);
 void				add_back_bonus(t_list **a, t_list *new);
 void				free_structs_bonus(t_list *a, t_list *b);
+bool    			is_dupliated_bonus(t_list *a);
 
 #endif

@@ -6,30 +6,29 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 11:46:33 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/16 17:25:45 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/16 18:10:20 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-void	swap_bonus(t_list **a, t_list **b) // working
+void	swap_bonus(t_list **a) // working
 {
 	t_list	*tmp;
 
 	if (struct_size(*a) < 2)
-		free_structs_bonus(*a, *b);
+		return ;
 	tmp = *a;
 	*a = (*a)->next;
 	tmp -> next = (*a)->next;
 	(*a)->next = tmp;
 }
-void	rotate_bonus(t_list **a, t_list **b)
+void	rotate_bonus(t_list **a)
 {
 	t_list	*tmp;
 
-	print_two_list(*a, *b);
 	if (struct_size(*a) < 2)
-		free_structs_bonus(*a, *b);
+		return ;
 	tmp = *a;
 	while (tmp->next)
 		tmp = tmp->next;
@@ -38,29 +37,28 @@ void	rotate_bonus(t_list **a, t_list **b)
 	tmp->next->next = NULL;
 }
 
-void	reverse_rotate_bonus(t_list **a, t_list **b)
+void	reverse_rotate_bonus(t_list **a)
 {
 	t_list	*tmp;
 
-	if (struct_size(*a) < 2) // the size must be smaller then 3 or 2 ?
-		free_structs_bonus(*a, *b);
+	if (struct_size(*a) < 2)
+		return ;
 	tmp = *a;
-	while (tmp->next->next) //segfault
+	while (tmp->next->next)
 		tmp = tmp->next;
-	tmp->next->next = *a; //segfault
+	tmp->next->next= *a;
 	*a = tmp->next;
 	tmp->next = NULL;
 }
 
-void	push_bonus(t_list **a, t_list **b) // function is working
+void	push_bonus(t_list **a, t_list **b)
 {
 	t_list	*tmp;
-	// print_two_list(*a, *b);
+
 	if (struct_size(*a) == 0)
 		return;
 	tmp = *a;
 	*a = (*a)->next;
 	tmp->next = *b;
 	(*b) = tmp;
-		// print_two_list(*a, *b);
 }

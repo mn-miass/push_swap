@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 12:51:02 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/15 12:54:18 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/16 18:27:18 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char	*ps_strjoin_bonus(char *str1, char *str2)
 		return (free(str1), NULL);
 	if (str1 == NULL)
 		return (ps_strdup_bonus(str2));
-	join = malloc(ps_strlen_bonus(str1) + ps_strlen_bonus(str2) + 1);
+	join = malloc(ps_strlen_bonus(str1) + ps_strlen_bonus(str2) + 2);
 	if (join == NULL)
 		return (NULL);
 	while (str1[i])

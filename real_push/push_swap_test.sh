@@ -6,10 +6,10 @@ import time
 import os
 
 # ===== CONFIG =====
-SIZE = 5
+SIZE = 1000
 TESTS = 10000
-LIMIT = 700
-TIMEOUT = 5
+LIMIT = 700000000
+TIMEOUT = 5000
 WORKERS = mp.cpu_count()
 
 # ===== INPUT GENERATION STRATEGIES =====
