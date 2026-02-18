@@ -6,12 +6,12 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 22:24:44 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/16 13:10:15 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/18 19:39:56 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
-#include <stdio.h>
+
 char	*allocate_digit_bonus(char *c)
 {
 	int		i;
@@ -59,17 +59,23 @@ int	num_digits_bonus(char *c)
 	return (num);
 }
 
+char	**creat_2d_bonus(char *c)
+{
+	char	**splited;
+
+	if (num_digits_bonus(c) == -1)
+		return (NULL);
+	splited = malloc((num_digits_bonus(c) + 1) * sizeof(char *));
+	return (splited);
+}
+
 char	**ps_split_bonus(char *c)
 {
-	int		size;
 	int		i;
 	char	**splited;
 
-	size = num_digits_bonus(c);
 	i = 0;
-	if (size == -1)
-		return(NULL);
-	splited = malloc((sizeof(char *) + 1) * size);
+	splited = creat_2d_bonus(c);
 	if (splited == NULL)
 		return (NULL);
 	while (*c)
@@ -79,10 +85,7 @@ char	**ps_split_bonus(char *c)
 		if (*c != '\0')
 			splited[i] = allocate_digit_bonus(c);
 		else
-		{
-			splited[i] = NULL;
-			return (splited);
-		}
+			return (splited[i] = NULL, (splited));
 		if (splited[i] == NULL)
 			return (free_2d_bonus(splited), NULL);
 		while (is_digit_bonus(*c) || is_sign_bonus(*c))
@@ -91,15 +94,3 @@ char	**ps_split_bonus(char *c)
 	}
 	return (splited);
 }
-
-// int main(int argc, char **argv)
-// {
-// 	int i = 0;
-// 	// char **splited = ps_split_bonus(argv[1]);
-// 	// while (splited[i])
-// 	// {
-// 	// 	printf("%s ", splited[i]);
-// 	// 	i++;
-// 	// }
-// 	printf("%d", num_digits_bonus(argv[1]));
-// }

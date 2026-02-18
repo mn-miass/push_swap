@@ -6,13 +6,13 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 11:46:33 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/16 18:10:20 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/18 19:38:22 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-void	swap_bonus(t_list **a) // working
+void	swap_bonus(t_list **a)
 {
 	t_list	*tmp;
 
@@ -20,9 +20,10 @@ void	swap_bonus(t_list **a) // working
 		return ;
 	tmp = *a;
 	*a = (*a)->next;
-	tmp -> next = (*a)->next;
+	tmp->next = (*a)->next;
 	(*a)->next = tmp;
 }
+
 void	rotate_bonus(t_list **a)
 {
 	t_list	*tmp;
@@ -46,7 +47,7 @@ void	reverse_rotate_bonus(t_list **a)
 	tmp = *a;
 	while (tmp->next->next)
 		tmp = tmp->next;
-	tmp->next->next= *a;
+	tmp->next->next = *a;
 	*a = tmp->next;
 	tmp->next = NULL;
 }
@@ -56,7 +57,7 @@ void	push_bonus(t_list **a, t_list **b)
 	t_list	*tmp;
 
 	if (struct_size(*a) == 0)
-		return;
+		return ;
 	tmp = *a;
 	*a = (*a)->next;
 	tmp->next = *b;

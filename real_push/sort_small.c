@@ -6,12 +6,11 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:16:56 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/14 22:10:30 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/18 19:40:04 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	sort_3(t_list **a)
 {

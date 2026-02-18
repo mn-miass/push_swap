@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 11:05:17 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/18 18:02:03 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/18 19:37:04 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	**creat_2d(char *str)
 	char	**splitted;
 
 	size = num_digits(str);
-	if (size == 0)
+	if (size == -1)
 		return (NULL);
 	splitted = malloc((size + 1) * sizeof(char *));
 	return (splitted);

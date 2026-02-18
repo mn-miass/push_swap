@@ -6,13 +6,12 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 21:55:06 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/17 17:26:25 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/18 19:39:53 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_BONUS_H
 # define CHECKER_BONUS_H
-# include <stdio.h>
 # include <limits.h>
 # include <stdbool.h>
 # include <stdlib.h>
@@ -23,8 +22,7 @@ typedef struct s_list
 	int				value;
 	struct s_list	*next;
 }					t_list;
-void print_two_list(t_list *a, t_list *b);
-void    print_list(t_list *a, char c);
+
 int					struct_size(t_list *a);
 bool				is_sign_bonus(char c);
 bool				is_space_bonus(char c);
@@ -56,6 +54,6 @@ bool				is_duplicated_bonus(t_list *a);
 t_list				*creat_node_bonus(int val);
 void				add_back_bonus(t_list **a, t_list *new);
 void				free_structs_bonus(t_list *a, t_list *b);
-bool    			is_dupliated_bonus(t_list *a);
+bool				is_dupliated_bonus(t_list *a);
 
 #endif

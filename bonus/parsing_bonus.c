@@ -6,12 +6,11 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 12:24:21 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/17 18:10:06 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/18 19:38:17 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
-#include <stdio.h>
 
 void	check(t_list *a)
 {
@@ -21,6 +20,7 @@ void	check(t_list *a)
 		error_bonus();
 	}
 }
+
 t_list	*parsing_bonus(int argc, char **argv)
 {
 	char	*join;

@@ -6,22 +6,12 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 21:47:02 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/17 18:09:54 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/18 19:39:09 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
-#include <stdio.h>
 
-// infinite loop in testing
-// segfaultt when we talk about non didgit even sign ?
-// error in non digit
-// parsing still have problems
-// error with list not sorted really the list in a is sorted but does not contain them all 
-// delete ps
-// free the get next line
-// free the structs
-// missing the duplicates checker
 void	ps(char *str)
 {
 	while (*str)
@@ -49,17 +39,17 @@ void	checker_bonus(t_list **a, t_list **b)
 		write(1, "KO\n", 3);
 }
 
-int		struct_size(t_list *a)
+int	struct_size(t_list *a)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!a)
-		return(i);
+		return (i);
 	while (a)
 	{
 		i++;
-		a = a -> next;
+		a = a->next;
 	}
 	return (i);
 }
