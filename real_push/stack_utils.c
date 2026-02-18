@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:16:41 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/15 11:11:23 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/18 18:45:04 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,31 +47,43 @@ bool	ps_is_duplicate(t_list *a)
 	return (0);
 }
 
+t_list	*small_index(t_list *a)
+{
+	int		min;
+	t_list	*node;
+
+	min = INT_MAX;
+	node = NULL;
+	while (a)
+	{
+		if (a -> index == -1 && a -> value < min)
+		{
+			min = a -> value;
+			node = a;
+		}
+		a = a -> next;
+	}
+	return (node);
+}
+
 void	ps_index_list(t_list *a)
 {
 	int		i;
-	int		min;
 	t_list	*tmp;
 	t_list	*min_node;
 
-	min = INT_MAX;
 	min_node = NULL;
 	i = 0;
 	tmp = a;
 	while (tmp)
 	{
-		if (tmp->value < min && tmp->index == -1)
-		{
-			min = tmp->value;
-			min_node = tmp;
-		}
+		min_node = small_index(a);
 		tmp = tmp->next;
 		if (tmp == NULL)
 		{
 			if (min_node == NULL)
 				break ;
 			min_node->index = i++;
-			min = INT_MAX;
 			min_node = NULL;
 			tmp = a;
 		}

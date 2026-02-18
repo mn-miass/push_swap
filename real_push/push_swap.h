@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 16:41:00 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/14 22:28:03 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/18 15:17:04 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 # include <stdbool.h>
 # include <stdlib.h>
 # include <unistd.h>
-
+// split modification + check the prototype what are the 
+//function are really used
 # define UP 1
 # define DOWN -1
 

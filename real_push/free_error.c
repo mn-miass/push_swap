@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:59:48 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/14 22:16:53 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/18 14:56:59 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@ void	error(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
-}
-
-void	free_1d(char *str)
-{
-	free(str);
 }
 
 void	free_2d(char **str)

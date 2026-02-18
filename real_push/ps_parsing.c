@@ -6,11 +6,21 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:44:06 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/14 22:43:57 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/18 18:01:30 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	check(t_list *a)
+{
+	if (ps_is_duplicate(a))
+	{
+		free_stack(&a);
+		error();
+	}
+	is_sorted(&a);
+}
 
 t_list	*ps_parsing(int argc, char **argv)
 {
@@ -31,15 +41,12 @@ t_list	*ps_parsing(int argc, char **argv)
 		i++;
 	}
 	splitted = ps_split(join);
-	free_1d(join); // free1d seem worthless
+	free(join);
 	if (splitted == NULL)
 		error();
-	i = 0;
-	a = ps_creat_stack(splitted); // need to check in case a fail ?
+	a = ps_creat_stack(splitted);
 	free_2d(splitted);
-	if (ps_is_duplicate(a)) // free a
-		error();
-	is_sorted(&a);
+	check(a);
 	ps_index_list(a);
 	return (a);
 }

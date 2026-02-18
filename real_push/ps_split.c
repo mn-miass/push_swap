@@ -6,14 +6,11 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 11:05:17 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/15 08:38:15 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/18 18:02:03 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// the check for null well be done outside the function
-// the function is working need to hundle memory leaks
 
 static int	num_digits(char *str)
 {
@@ -51,37 +48,43 @@ static int	digit_size(char *str)
 	return (i);
 }
 
+char	**creat_2d(char *str)
+{
+	int		size;
+	char	**splitted;
+
+	size = num_digits(str);
+	if (size == 0)
+		return (NULL);
+	splitted = malloc((size + 1) * sizeof(char *));
+	return (splitted);
+}
+
 char	**ps_split(char *str)
 {
 	char	**splited;
-	int		size;
 	int		i;
+	int		j;
+	int		dc;
 
-	size = num_digits(str);
-	if (size == -1)
-		return (NULL);
-	splited = malloc((size + 1) * sizeof(char *));
+	i = 0;
+	splited = creat_2d(str);
 	if (splited == NULL)
 		return (NULL);
-	size = 0;
-	while (*str)
+	dc = num_digits(str);
+	while (dc > i)
 	{
-		i = 0;
-		while (ps_is_spaces(*str))
+		j = 0;
+		while (*str && ps_is_spaces(*str))
 			str++;
 		if (*str == '\0')
 			break ;
-		splited[size] = malloc(digit_size(str) + 1);
-		if (splited[size] == NULL)
+		splited[i] = malloc(digit_size(str) + 1);
+		if (splited[i] == NULL)
 			return (free_2d(splited), NULL);
-		while (*str && !ps_is_spaces(*str))
-		{
-			splited[size][i++] = *str;
-			str++;
-		}
-		splited[size][i] = '\0';
-		size++;
+		while (*str && (ps_is_digit(*str) || ps_is_sign(*str)))
+			splited[i][j++] = *str++;
+		splited[i++][j] = '\0';
 	}
-	splited[size] = NULL;
-	return (splited);
+	return (splited[i] = NULL, splited);
 }

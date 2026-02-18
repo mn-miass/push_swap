@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:17:15 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/14 22:09:50 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/18 14:55:57 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ long long int	ps_atoi(char *c)
 	{
 		num = num * 10 + (*c - '0');
 		if (num > (INT_MAX + (long long)1))
-			// long here to convert 1 to long and operate the operation with long long not int
 			return (num);
 		c++;
 	}
