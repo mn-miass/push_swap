@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 16:41:00 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/18 18:46:24 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/19 11:35:52 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ t_list				*biggest_smallest(t_list *a, int i);
 void				set_target(t_list *a, t_list *b);
 void				calculate_cost(t_list *a, t_list *b);
 void				error(void);
-void				free_1d(char *str);
 void				free_2d(char **str);
 void				free_stack(t_list **a);
 bool				ps_is_digit(char c);
