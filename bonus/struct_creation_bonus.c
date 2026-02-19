@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 22:24:27 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/15 19:37:07 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/19 11:24:39 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ t_list	*creat_stract_bonus(char **splited)
 	long long	value;
 
 	i = 0;
+	a = NULL;
 	while (splited[i])
 	{
 		value = ps_atoi_bonus(splited[i]);
@@ -81,6 +82,8 @@ t_list	*creat_stract_bonus(char **splited)
 
 bool	is_sorted_bonus(t_list *a)
 {
+	if (!a)
+		return (1);
 	while (a->next)
 	{
 		if (a->value > a->next->value)

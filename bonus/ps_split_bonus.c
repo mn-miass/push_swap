@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 22:24:44 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/18 19:39:56 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/19 11:20:42 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ char	*allocate_digit_bonus(char *c)
 		digits[i] = c[i];
 		i++;
 	}
+	digits[i] = '\0';
 	return (digits);
 }
 

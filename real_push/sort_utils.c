@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:16:53 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/15 11:04:42 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/19 11:57:27 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	set_position(t_list *a)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (a)
 	{
 		a->position = i;

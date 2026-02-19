@@ -6,12 +6,13 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 21:55:06 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/18 19:39:53 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/19 11:22:25 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_BONUS_H
 # define CHECKER_BONUS_H
+
 # include <limits.h>
 # include <stdbool.h>
 # include <stdlib.h>
@@ -54,6 +55,5 @@ bool				is_duplicated_bonus(t_list *a);
 t_list				*creat_node_bonus(int val);
 void				add_back_bonus(t_list **a, t_list *new);
 void				free_structs_bonus(t_list *a, t_list *b);
-bool				is_dupliated_bonus(t_list *a);
 
 #endif

@@ -6,12 +6,11 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:45:07 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/16 10:38:55 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/19 11:12:10 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
-#include <fcntl.h>
 
 char	*ps_realloc_bonus(char *str, char c)
 {

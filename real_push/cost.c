@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:17:33 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/18 14:55:37 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/19 12:27:33 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	set_direction(t_list *a, int size_a, int size_b)
 {
-	if (a->position < size_b / 2)
+	if (a->position <= size_b / 2)
 		a->direction = UP;
 	else
 		a->direction = DOWN;
-	if (a->target->position < size_a / 2)
+	if (a->target->position <= size_a / 2)
 		a->target->direction = UP;
 	else
 		a->target->direction = DOWN;
@@ -41,7 +41,6 @@ t_list	*biggest_smallest(t_list *a, int i)
 
 void	set_target(t_list *a, t_list *b)
 {
-	is_bigger(b);
 	while (b)
 	{
 		b->target = biggest_smallest(a, b->index);

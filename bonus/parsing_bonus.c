@@ -6,7 +6,7 @@
 /*   By: mn-miass <mn-miass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 12:24:21 by mn-miass          #+#    #+#             */
-/*   Updated: 2026/02/18 19:38:17 by mn-miass         ###   ########.fr       */
+/*   Updated: 2026/02/19 11:23:32 by mn-miass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	check(t_list *a)
 {
-	if (is_dupliated_bonus(a))
+	if (is_duplicated_bonus(a))
 	{
 		free_struct_bonus(a);
 		error_bonus();
